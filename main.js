@@ -2,7 +2,6 @@ const fs = require('fs');
 
 const filePath = process.argv[2];
 
-// ✅ Guard for no file path
 if (!filePath) {
   console.log("Error reading file");
   process.exit(0);
@@ -12,7 +11,7 @@ function readFileAsync(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
-        reject("Error reading file");
+        reject("Error reading file"); 
         return;
       }
       resolve(data);
