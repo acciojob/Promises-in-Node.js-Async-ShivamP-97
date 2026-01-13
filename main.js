@@ -11,7 +11,7 @@ function readFileAsync(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
-        reject("Error reading file"); 
+        reject("Error reading file");
         return;
       }
       resolve(data);
@@ -21,9 +21,8 @@ function readFileAsync(filePath) {
 
 function modifyText(text) {
   return new Promise((resolve) => {
-    const upperCaseText = text.toUpperCase();
-    const reversedText = upperCaseText.split('').reverse().join('');
-    resolve(reversedText);
+    const modified = text.toUpperCase().split('').reverse().join('');
+    resolve(modified);
   });
 }
 
