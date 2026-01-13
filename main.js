@@ -15,14 +15,10 @@ function readFileAsync(filePath) {
 }
 
 function modifyText(text) {
-  return new Promise((resolve, reject) => {
-    try {
-      const upperCaseText = text.toUpperCase();
-      const reversedText = upperCaseText.split('').reverse().join('');
-      resolve(reversedText);
-    } catch (error) {
-      reject("Error modifying text");
-    }
+  return new Promise((resolve) => {
+    const upperCaseText = text.toUpperCase();
+    const reversedText = upperCaseText.split('').reverse().join('');
+    resolve(reversedText);
   });
 }
 
@@ -32,5 +28,5 @@ readFileAsync(filePath)
     console.log(modifiedText);
   })
   .catch((error) => {
-    console.error(error);
+    console.log(error);
   });
